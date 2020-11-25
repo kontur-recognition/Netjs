@@ -352,6 +352,10 @@ class NString
 	{
 		return !str;
 	}
+	static IsNullOrWhiteSpace(str: string): boolean
+	{
+		return !str || str.trim().length === 0;
+	}
 	static Join(separator: string, parts: string[]): string
 	{
 		return parts.join(separator);
