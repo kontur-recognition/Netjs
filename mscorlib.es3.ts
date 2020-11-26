@@ -352,6 +352,11 @@ class NString
 	{
 		return !str;
 	}
+	static IsNullOrWhiteSpace(str: string): boolean
+	{
+		// trim polyfill from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+		return !str || str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '').length === 0;
+	}
 	static Join(separator: string, parts: string[]): string
 	{
 		return parts.join(separator);
